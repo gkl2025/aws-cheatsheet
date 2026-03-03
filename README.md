@@ -15,3 +15,7 @@
 ## Inspect a profile’s config
   
   aws configure list --profile YOUR_PROFILE_NAME
+
+# get cloudformation RDS endpoint
+
+  aws cloudformation describe-stacks   --stack-name wordpress-rds   --query "Stacks[0].Outputs[?OutputKey=='RDSEndpoint'].OutputValue"   --output text
